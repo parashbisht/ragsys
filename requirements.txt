@@ -1,0 +1,33 @@
+fastapi==0.115.0
+uvicorn[standard]==0.30.6
+pydantic==2.9.2
+pydantic-settings==2.5.2
+python-dotenv==1.0.1
+ 
+# Ingestion
+pypdf==4.3.1
+unstructured==0.15.13
+markdown==3.7
+ 
+# Embeddings + vector store
+sentence-transformers==3.1.1
+faiss-cpu==1.8.0.post1
+numpy==1.26.4
+ 
+# Hybrid keyword search
+rank-bm25==0.2.2
+ 
+# LLM clients (use whichever you have a key for)
+anthropic==0.34.2
+openai==1.47.1
+ 
+# Reranking (cross-encoder, runs locally, no API needed)
+sentence-transformers==3.1.1
+ 
+# UI
+streamlit==1.39.0
+ 
+# Eval / dev
+pytest==8.3.3
+tqdm==4.66.5
+ 
