@@ -5,4 +5,4 @@ __pycache__/
 .pytest_cache/
 /data/index/
 faiss.index
-chunks.pkl
+chunks.pkldata/sample/*.pdf
