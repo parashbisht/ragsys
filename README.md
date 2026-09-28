@@ -49,6 +49,9 @@ candidate from someone who understands production RAG:
 
 ## Quickstart
 
+Use Python 3.11, matching the Docker image. The pinned dependencies do not
+support Python 3.14.
+
 ```bash
 # 1. Install dependencies
 pip install -r requirements.txt
