@@ -130,3 +130,10 @@ tests/
    anywhere.
 6. **Observability**: log latency, token usage, and retrieval-failure rate
    per request (a simple `app/logging_middleware.py` is enough to start).
+
+
+## Sample data
+Download these papers into data/sample/ before running ingestion:
+- REALM: https://arxiv.org/abs/2002.08909
+- Ragas: https://arxiv.org/abs/2309.15217
+- RAG Survey: https://arxiv.org/abs/2312.10997

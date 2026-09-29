@@ -6,3 +6,4 @@ __pycache__/
 /data/index/
 faiss.index
 chunks.pkldata/sample/*.pdf
+data/sample/*.pdf
