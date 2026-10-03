@@ -137,3 +137,8 @@ Download these papers into data/sample/ before running ingestion:
 - REALM: https://arxiv.org/abs/2002.08909
 - Ragas: https://arxiv.org/abs/2309.15217
 - RAG Survey: https://arxiv.org/abs/2312.10997
+
+## Evaluation Results
+Measured with scripts/evaluate.py using an LLM-judge approach:
+- Average Faithfulness: 5.00/5
+- Average Relevance: 5.00/5

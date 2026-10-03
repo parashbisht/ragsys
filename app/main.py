@@ -7,6 +7,7 @@ Run with:
 Then visit http://localhost:8000/docs for the interactive API.
 """
 import logging
+import os
 import time
 from pathlib import Path
 
@@ -23,10 +24,13 @@ logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger("rag")
 
 app = FastAPI(title="Production RAG API", version="0.1.0")
+allowed_origins = [
+    origin.strip() for origin in os.getenv("ALLOWED_ORIGINS", "*").split(",")
+]
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # tighten this before real deployment
+    allow_origins=allowed_origins,
     allow_methods=["*"],
     allow_headers=["*"],
 )
