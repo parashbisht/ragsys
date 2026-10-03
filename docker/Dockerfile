@@ -15,7 +15,8 @@ RUN mkdir -p data/sample \
 	&& curl -fL https://arxiv.org/pdf/2309.15217 -o data/sample/2309.15217v2.pdf \
 	&& curl -fL https://arxiv.org/pdf/2312.10997 -o data/sample/rag_test.pdf
 
+RUN python scripts/ingest.py
+
 EXPOSE 8000
 
-# Build the index at container start if it doesn't exist, then serve.
-CMD ["sh", "-c", "python scripts/ingest.py; uvicorn app.main:app --host 0.0.0.0 --port 8000"]
+CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8000"]
