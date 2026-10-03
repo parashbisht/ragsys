@@ -14,6 +14,9 @@ class Settings(BaseSettings):
     openai_api_key: str = ""
     openai_model: str = "gpt-4o-mini"
 
+    google_api_key: str = ""
+    gemini_model: str = "gemini-2.5-flash"
+
     embedding_model: str = "sentence-transformers/all-MiniLM-L6-v2"
     rerank_model: str = "cross-encoder/ms-marco-MiniLM-L-6-v2"
 

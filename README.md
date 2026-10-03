@@ -58,7 +58,7 @@ pip install -r requirements.txt
 
 # 2. Set up your API key
 cp .env.example .env
-# edit .env and add your ANTHROPIC_API_KEY or OPENAI_API_KEY
+# edit .env and add the API key for your selected provider
 
 # 3. Add your documents
 # Drop .pdf, .md, or .txt files into data/sample/

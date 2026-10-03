@@ -66,7 +66,7 @@ def judge(question: str, sources_text: str, answer: str) -> dict:
             messages=[{"role": "user", "content": prompt}],
         )
         raw = "".join(b.text for b in response.content if b.type == "text")
-    else:
+    elif settings.llm_provider == "openai":
         from openai import OpenAI
 
         client = OpenAI(api_key=settings.openai_api_key)
@@ -76,6 +76,17 @@ def judge(question: str, sources_text: str, answer: str) -> dict:
             max_tokens=200,
         )
         raw = response.choices[0].message.content
+    elif settings.llm_provider == "gemini":
+        from google import genai
+
+        client = genai.Client(api_key=settings.google_api_key)
+        response = client.models.generate_content(
+            model="gemini-3.8-flash",
+            contents=prompt,
+        )
+        raw = response.text
+    else:
+        raise ValueError(f"Unknown LLM_PROVIDER: {settings.llm_provider}")
 
     raw = raw.strip().strip("```json").strip("```").strip()
     try:
